@@ -1,0 +1,20 @@
+# NPM / lerna
+node_modules
+*.log
+
+# Build assets
+/coverage
+/build
+dist
+/*.iml
+/tmp
+build
+lib
+
+# Other files and folders
+*~
+*#
+*.swp
+*.bak
+.DS_Store
+nightwatch.json

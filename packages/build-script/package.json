@@ -1,0 +1,16 @@
+{
+    "name": "@monorepo/build-scripts",
+    "version": "1.0.0",
+    "dependencies": {
+        "typescript": "^4.4.0"
+    },
+    "devDependencies": {
+        "@types/node": "^16.10.4"
+    },
+    "bin": {
+        "shared-build": "./bin/shared-build"
+    },
+    "scripts": {
+        "build": "tsc -p ."
+    }
+}

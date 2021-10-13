@@ -1,0 +1,15 @@
+{
+    "packages": [
+        "packages/**"
+    ],
+    "version": "0.1.0",
+    "useWorkspaces": false,
+    "command": {
+        "version": {
+            "push": false
+        },
+        "publish": {
+            "push": false
+        }
+    }
+}
