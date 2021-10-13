@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import path from 'path';
-import { Executable } from '@rushstack/node-core-library';
+import { Executable, Import } from '@rushstack/node-core-library';
 
 console.log('STARTING BUILD');
 
@@ -22,7 +22,8 @@ function getBaseTypeScriptConfigPath(): string {
 }
 
 function runTypeScriptCompiler() {
-    spawn('tsc', ['-p', getTypeScriptConfigPath()]);
+    const typescriptPath: string = Import.resolvePackage({ packageName: 'typescript', baseFolderPath: __dirname });
+    spawn(process.argv0 , [`${typescriptPath}/bin/tsc`, '-p', getTypeScriptConfigPath()]);
 }
 
 function spawn(command: string, args: string[]) {
