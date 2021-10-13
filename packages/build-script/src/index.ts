@@ -1,6 +1,6 @@
-import * as child_process from 'child_process';
 import * as fs from 'fs';
 import path from 'path';
+import { Executable } from '@rushstack/node-core-library';
 
 console.log('STARTING BUILD');
 
@@ -22,15 +22,18 @@ function getBaseTypeScriptConfigPath(): string {
 }
 
 function runTypeScriptCompiler() {
-    spawn(`tsc -p ${getTypeScriptConfigPath()}`);
+    spawn('tsc', ['-p', getTypeScriptConfigPath()]);
 }
 
-function spawn(command: string) {
-    console.log(`Running ${command}`);
-    console.log(process.cwd())
-    child_process.spawnSync(command);
+function spawn(command: string, args: string[]) {
+    console.log(`Running ${command} ${args.join(' ')}`);
+    
+    Executable.spawnSync(command, args);
 }
 
-execute();
-
-
+try {
+    execute();
+} catch (ex) {
+    console.error(ex);
+    process.exit(1);
+}
