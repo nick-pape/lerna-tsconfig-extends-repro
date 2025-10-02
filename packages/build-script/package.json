@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "dependencies": {
         "typescript": "^4.4.0",
-        "@rushstack/node-core-library": "^3.42.2"
+        "@rushstack/node-core-library": "^3.66.1"
     },
     "devDependencies": {
         "@types/node": "^16.10.4"
